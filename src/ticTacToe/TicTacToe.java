@@ -12,7 +12,7 @@ public class TicTacToe {
 	public static void main(String[] args) {
 		System.out.println("========================");
 		System.out.println("|| A Tic Tac Toe game ||");
-		System.out.println("========================");
+		System.out.println("========================\n\n");
 		
 		boolean noWinner = true;
 		
@@ -27,6 +27,21 @@ public class TicTacToe {
 			}
 		}
 		System.out.println("\n-----");
+		
+		for (int i = 0; i < row2.length; i++) {
+			System.out.print(row2[i]);
+			if (i == 0 || i == 1) {
+				System.out.print("|");
+			}
+		}
+		System.out.println("\n-----");
+		
+		for (int i = 0; i < row3.length; i++) {
+			System.out.print(row3[i]);
+			if (i == 0 || i == 1) {
+				System.out.print("|");
+			}
+		}
 	}
 
 }
