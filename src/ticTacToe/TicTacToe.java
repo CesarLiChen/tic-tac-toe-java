@@ -26,7 +26,7 @@ public class TicTacToe {
 		while (turns < 9 || noWinner) {
 			
 			if (turns != 1) {
-				for (int i = 0; i < 20; i++) {
+				for (int i = 0; i < 10; i++) {
 					System.out.print("\n");
 				}
 			}
@@ -89,7 +89,7 @@ public class TicTacToe {
 				row3[2] = playerTurn;
 			}
 			
-			// Checks if X won
+			// Checks if X won, checks ROWS
 			if (row1[0].equals("X") && row1[1].equals("X") && row1[2].equals("X")) {
 				noWinner = false;
 				winner = "X";
@@ -99,10 +99,21 @@ public class TicTacToe {
 			} else if (row3[0].equals("X") && row3[1].equals("X") && row3[2].equals("X")) {
 				noWinner = false;
 				winner = "X";
+			// Checks DIAGONALS
 			} else if (row1[0].equals("X") && row2[1].equals("X") && row3[2].equals("X")) {
 				noWinner = false;
 				winner = "X";
 			} else if (row1[2].equals("X") && row2[1].equals("X") && row3[0].equals("X")) {
+				noWinner = false;
+				winner = "X";
+			// Checks COLUMNS
+			} else if (row1[0].equals("X") && row2[0].equals("X") && row3[0].equals("X")) {
+				noWinner = false;
+				winner = "X";
+			} else if (row1[1].equals("X") && row2[1].equals("X") && row3[1].equals("X")) {
+				noWinner = false;
+				winner = "X";
+			} else if (row1[2].equals("X") && row2[2].equals("X") && row3[2].equals("X")) {
 				noWinner = false;
 				winner = "X";
 			}
@@ -116,16 +127,26 @@ public class TicTacToe {
 				winner = "O";
 			} else if (row3[0].equals("O") && row3[1].equals("O") && row3[2].equals("O")) {
 				noWinner = false;
-				winner = "X";
+				winner = "O";
 			} else if (row1[0].equals("O") && row2[1].equals("O") && row3[2].equals("O")) {
 				noWinner = false;
 				winner = "O";
 			} else if (row1[2].equals("O") && row2[1].equals("O") && row3[0].equals("O")) {
 				noWinner = false;
 				winner = "O";
+			} else if (row1[0].equals("O") && row2[0].equals("O") && row3[0].equals("O")) {
+				noWinner = false;
+				winner = "O";
+			} else if (row1[1].equals("O") && row2[1].equals("O") && row3[1].equals("O")) {
+				noWinner = false;
+				winner = "O";
+			} else if (row1[2].equals("O") && row2[2].equals("O") && row3[2].equals("O")) {
+				noWinner = false;
+				winner = "O";
 			}
 			
 			turns += 1;
+			playerTurn = (playerTurn.equals(PLAYER_1)) ? PLAYER_2 : PLAYER_1; // Ternary operator
 			
 		}
 	}
