@@ -23,7 +23,7 @@ public class TicTacToe {
 		boolean noWinner = true;
 		String winner = "";
 		
-		while (turns < 9 || noWinner) {
+		while (turns < 10 && noWinner) {
 			
 			if (turns != 1) {
 				for (int i = 0; i < 10; i++) {
@@ -62,32 +62,43 @@ public class TicTacToe {
 			System.out.println(playerTurn + ", please write your desired position (1-9)");
 			System.out.print("Input # here: ");
 			int playerInput = sc.nextInt();
+			boolean validPos = false;
 			
-			while (playerInput < 1 || 9 < playerInput) {
-				System.out.println("\nInvalid input");
-				System.out.print("Please enter a new one: ");
-				playerInput = sc.nextInt();
-			}	
-			
-			if (playerInput == 1 && row1[0] == "1") {
-				row1[0] = playerTurn;
-			} else if (playerInput == 2 && row1[1] == "2") {
-				row1[1] = playerTurn;
-			} else if (playerInput == 3 && row1[2] == "3") {
-				row1[2] = playerTurn;
-			} else if (playerInput == 4 && row2[0] == "4") {
-				row2[0] = playerTurn;
-			} else if (playerInput == 5 && row2[1] == "5") {
-				row2[1] = playerTurn;
-			} else if (playerInput == 6 && row2[2] == "6") {
-				row2[2] = playerTurn;
-			} else if (playerInput == 7 && row3[0] == "7") {
-				row3[0] = playerTurn;
-			} else if (playerInput == 8 && row3[1] == "8") {
-				row3[1] = playerTurn;
-			} else if (playerInput == 9 && row3[2] == "9") {
-				row3[2] = playerTurn;
+			while (!validPos) {
+				if (playerInput == 1 && row1[0] == "1") {
+					row1[0] = playerTurn;
+					validPos = true;
+				} else if (playerInput == 2 && row1[1] == "2") {
+					row1[1] = playerTurn;
+					validPos = true;
+				} else if (playerInput == 3 && row1[2] == "3") {
+					row1[2] = playerTurn;
+					validPos = true;
+				} else if (playerInput == 4 && row2[0] == "4") {
+					row2[0] = playerTurn;
+					validPos = true;
+				} else if (playerInput == 5 && row2[1] == "5") {
+					row2[1] = playerTurn;
+					validPos = true;
+				} else if (playerInput == 6 && row2[2] == "6") {
+					row2[2] = playerTurn;
+					validPos = true;
+				} else if (playerInput == 7 && row3[0] == "7") {
+					row3[0] = playerTurn;
+					validPos = true;
+				} else if (playerInput == 8 && row3[1] == "8") {
+					row3[1] = playerTurn;
+					validPos = true;
+				} else if (playerInput == 9 && row3[2] == "9") {
+					row3[2] = playerTurn;
+					validPos = true;
+				} else {
+					System.out.println("\nNot a valid position");
+					System.out.print("Enter new position: ");
+					playerInput = sc.nextInt();
+				}
 			}
+			
 			
 			// Checks if X won, checks ROWS
 			if (row1[0].equals("X") && row1[1].equals("X") && row1[2].equals("X")) {
@@ -148,6 +159,15 @@ public class TicTacToe {
 			turns += 1;
 			playerTurn = (playerTurn.equals(PLAYER_1)) ? PLAYER_2 : PLAYER_1; // Ternary operator
 			
+			if (winner.equals("O")) {
+				noWinner = false;
+				System.out.println("\t\n'O' Player WINS");
+			} else if (winner.equals("X")) {
+				noWinner = false;
+				System.out.println("\t\n'X' Player WINS");
+			} else if (noWinner && turns >= 9) {
+				System.out.println("\t\nIt's a tie =(");
+			}
 		}
 	}
 }
