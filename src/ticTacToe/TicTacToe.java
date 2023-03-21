@@ -21,6 +21,7 @@ public class TicTacToe {
 		String playerTurn = PLAYER_1; // X or O based on turn
 		int turns = 1; //Total of 9 turns
 		boolean noWinner = true;
+		String winner = "";
 		
 		while (turns < 9 || noWinner) {
 			
@@ -88,13 +89,43 @@ public class TicTacToe {
 				row3[2] = playerTurn;
 			}
 			
+			// Checks if X won
 			if (row1[0].equals("X") && row1[1].equals("X") && row1[2].equals("X")) {
 				noWinner = false;
+				winner = "X";
 			} else if (row2[0].equals("X") && row2[1].equals("X") && row2[2].equals("X")) {
 				noWinner = false;
+				winner = "X";
 			} else if (row3[0].equals("X") && row3[1].equals("X") && row3[2].equals("X")) {
 				noWinner = false;
-			} 
+				winner = "X";
+			} else if (row1[0].equals("X") && row2[1].equals("X") && row3[2].equals("X")) {
+				noWinner = false;
+				winner = "X";
+			} else if (row1[2].equals("X") && row2[1].equals("X") && row3[1].equals("X")) {
+				noWinner = false;
+				winner = "X";
+			}
+			
+			//Checks if O won
+			if (row1[0].equals("O") && row1[1].equals("O") && row1[2].equals("OX")) {
+				noWinner = false;
+				winner = "O";
+			} else if (row2[0].equals("O") && row2[1].equals("O") && row2[2].equals("O")) {
+				noWinner = false;
+				winner = "O";
+			} else if (row3[0].equals("O") && row3[1].equals("O") && row3[2].equals("O")) {
+				noWinner = false;
+				winner = "X";
+			} else if (row1[0].equals("O") && row2[1].equals("O") && row3[2].equals("O")) {
+				noWinner = false;
+				winner = "O";
+			} else if (row1[2].equals("O") && row2[1].equals("O") && row3[1].equals("O")) {
+				noWinner = false;
+				winner = "O";
+			}
+			
+			turns += 1;
 			
 		}
 	}
