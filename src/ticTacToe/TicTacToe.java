@@ -102,7 +102,7 @@ public class TicTacToe {
 			} else if (row1[0].equals("X") && row2[1].equals("X") && row3[2].equals("X")) {
 				noWinner = false;
 				winner = "X";
-			} else if (row1[2].equals("X") && row2[1].equals("X") && row3[1].equals("X")) {
+			} else if (row1[2].equals("X") && row2[1].equals("X") && row3[0].equals("X")) {
 				noWinner = false;
 				winner = "X";
 			}
@@ -120,7 +120,7 @@ public class TicTacToe {
 			} else if (row1[0].equals("O") && row2[1].equals("O") && row3[2].equals("O")) {
 				noWinner = false;
 				winner = "O";
-			} else if (row1[2].equals("O") && row2[1].equals("O") && row3[1].equals("O")) {
+			} else if (row1[2].equals("O") && row2[1].equals("O") && row3[0].equals("O")) {
 				noWinner = false;
 				winner = "O";
 			}
