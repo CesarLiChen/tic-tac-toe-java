@@ -88,7 +88,14 @@ public class TicTacToe {
 				row3[2] = playerTurn;
 			}
 			
-			turns += 1;
+			if (row1[0].equals("X") && row1[1].equals("X") && row1[2].equals("X")) {
+				noWinner = false;
+			} else if (row2[0].equals("X") && row2[1].equals("X") && row2[2].equals("X")) {
+				noWinner = false;
+			} else if (row3[0].equals("X") && row3[1].equals("X") && row3[2].equals("X")) {
+				noWinner = false;
+			} 
+			
 		}
 	}
 }
