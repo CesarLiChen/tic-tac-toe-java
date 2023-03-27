@@ -160,9 +160,59 @@ public class TicTacToe {
 			playerTurn = (playerTurn.equals(PLAYER_1)) ? PLAYER_2 : PLAYER_1; // Ternary operator
 			
 			if (winner.equals("O")) {
+				System.out.println("\n\n\n\n\n\n\n\n\n\n");
+				for (int i = 0; i < row1.length; i++) {
+					System.out.print(row1[i]);
+					if (i == 0 || i == 1) {
+						System.out.print("|");
+					}
+				}
+				System.out.println("\n-----");
+				
+				for (int i = 0; i < row2.length; i++) {
+					System.out.print(row2[i]);
+					if (i == 0 || i == 1) {
+						System.out.print("|");
+					}
+				}
+				System.out.println("\n-----");
+				
+				for (int i = 0; i < row3.length; i++) {
+					System.out.print(row3[i]);
+					if (i == 0 || i == 1) {
+						System.out.print("|");
+					}
+				}
+				System.out.println("\n");
+				
 				noWinner = false;
 				System.out.println("\t\n'O' Player WINS");
 			} else if (winner.equals("X")) {
+				System.out.println("\n\n\n\n\n\n\n\n\n\n");
+				for (int i = 0; i < row1.length; i++) {
+					System.out.print(row1[i]);
+					if (i == 0 || i == 1) {
+						System.out.print("|");
+					}
+				}
+				System.out.println("\n-----");
+				
+				for (int i = 0; i < row2.length; i++) {
+					System.out.print(row2[i]);
+					if (i == 0 || i == 1) {
+						System.out.print("|");
+					}
+				}
+				System.out.println("\n-----");
+				
+				for (int i = 0; i < row3.length; i++) {
+					System.out.print(row3[i]);
+					if (i == 0 || i == 1) {
+						System.out.print("|");
+					}
+				}
+				System.out.println("\n");
+				
 				noWinner = false;
 				System.out.println("\t\n'X' Player WINS");
 			} else if (noWinner && turns >= 9) {
